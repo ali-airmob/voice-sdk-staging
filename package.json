@@ -1,0 +1,24 @@
+{
+  "name": "vtk-voice-ai-sdk",
+  "version": "1.0.0",
+  "description": "Airomob Voice Toolkit AI SDK - staging build",
+  "type": "module",
+  "main": "dist/voice-ai.js",
+  "module": "dist/voice-ai.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-airmob/voice-sdk-staging.git"
+  },
+  "license": "UNLICENSED"
+}
