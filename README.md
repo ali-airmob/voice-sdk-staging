@@ -2,17 +2,17 @@
 
 Staging build of the [Airomob](https://airomob.com) Voice AI SDK, the embeddable voice and chat widget for React apps.
 
-> **Staging build.** For testing integrations and early features. Production sites should use the production SDK instead: [`airomobdxb/voicesdk`](https://github.com/airomobdxb/voicesdk).
+> **Staging build.** For testing integrations and early features. Production sites should use the production release instead: [`vtk-voice-ai-sdk` on npm](https://www.npmjs.com/package/vtk-voice-ai-sdk) (`npm install vtk-voice-ai-sdk`) or the [`airomobdxb/voicesdk`](https://github.com/airomobdxb/voicesdk) repository.
 
 ## Install
 
-Pin a version tag so you don't pick up an unfinished build:
-
 ```bash
-npm install https://github.com/ali-airmob/voice-sdk-staging.git#v2.0.0
+npm install vtk-voice-ai-sdk@staging
 ```
 
-The package name is the same as production (`vtk-voice-ai-sdk`), so switching between staging and production only means changing the install URL, not your imports.
+The `staging` tag always points at the newest staging build. To lock a specific build, install its exact version, for example `npm install vtk-voice-ai-sdk@2.0.0-staging.1`.
+
+The package name is the same as production, so switching between staging and production only changes the install command, not your imports.
 
 Requires React 18 or 19.
 
@@ -31,17 +31,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
-Use an App ID and API key created in the **staging** dashboard. Production credentials will not work here.
+Use an App ID and API key created in the [**staging** dashboard](https://staging-portal.airomob.com). Production credentials will not work here.
 
 Full option and event types are in `dist/index.d.ts`.
-
-## Contents
-
-| File | Purpose |
-|---|---|
-| `dist/voice-ai.js` | ES module build |
-| `dist/style.css` | Widget styles |
-| `dist/index.d.ts` | TypeScript types |
 
 ## Contact
 
