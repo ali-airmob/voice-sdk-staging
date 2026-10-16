@@ -21,12 +21,39 @@ export type VoiceAIEventType =
   | "tool.executed"
   /** Triggered if a tool execution fails or if the requested tool does not exist. */
   | "tool.error"
+  /** Voice calls only. The agent's voice became audible (measured on playback, not when the server finishes generating). */
+  | "agent.speaking.started"
+  /** Voice calls only. The agent's voice stopped, including when the visitor interrupts it. */
+  | "agent.speaking.stopped"
+  /** Voice calls only. The visitor started talking. */
+  | "user.speaking.started"
+  /** Voice calls only. The visitor stopped talking. */
+  | "user.speaking.stopped"
+  /** Voice calls only. The visitor finished and the agent has not started answering yet. */
+  | "agent.thinking"
   /** Triggered when the Text Chat agent starts generating a response. */
   | "chat.generating"
   /** Triggered when the Text Chat agent successfully finishes streaming a response. */
   | "chat.generated"
   /** Triggered if the Text Chat stream encounters an error. */
   | "chat.error";
+
+/** Values of the `data-vtk-state` attribute on the voice call screen. */
+export type VoiceCallState =
+  /** No call, or connected and nobody is talking. */
+  | "idle"
+  /** The call is being set up. */
+  | "connecting"
+  /** The visitor is talking. */
+  | "listening"
+  /** The visitor stopped and the agent has not started answering. */
+  | "thinking"
+  /** The agent's voice is playing. */
+  | "speaking"
+  /** The agent is running a tool. */
+  | "tool"
+  /** The call is over. */
+  | "ended";
 
 export interface VoiceAIOptions {
   /**
